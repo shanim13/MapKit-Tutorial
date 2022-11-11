@@ -27,9 +27,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var geocoder = CLGeocoder()
     
     var handleMapSearchDelegate: HandleMapSearchDelegate? = nil
-
-    
-//    var searchingList: [MKMapItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +56,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         locationSearchTable.mapView = mapView
         locationSearchTable.handleMapSearchDelegate = self
-        //        locationSearchTable.searchButtonDelegate = self
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         self.mapView.addGestureRecognizer(longPressGesture)
@@ -121,7 +117,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
-    
     func dropPinZoomIn(placemark:MKPlacemark){
         
         selectedPin = placemark
@@ -135,13 +130,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
         mapView.addAnnotation(annotation)
     }
-        
-        
-        func zoomIn(placemark: MKPlacemark){
+    
+    func zoomIn(placemark: MKPlacemark){
         selectedPin = placemark
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
-    
+        
         mapView.setRegion(region, animated: true)
     }
     
