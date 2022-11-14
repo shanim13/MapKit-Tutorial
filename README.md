@@ -5,5 +5,3 @@ In main ViewController, I have implemented the MapKit and in the LocationVC it's
 
 Used Delegates, Imported Core location to use CLGeocoder, added Gestures, Placemarks.
 Dropping pins in all the location but zooming on the clicked one.
-
-Just for the reset
